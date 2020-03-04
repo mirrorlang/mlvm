@@ -2,20 +2,32 @@
 //
 
 #include <iostream>
-
+#include <fstream>
 #include "memoryspace.h"
 #include "runner.h"
+#include "codeloader.h"
+
 memoryspace* m = new  memoryspace();
 runner cpu = runner();
 void loadbitop() {
-
+	codeloader cl = codeloader();
+    std::string p = "C:\\github.com\\mirrorlang\\mirrorlang\\example\\helloworld.html";
+    std::ifstream ifs(p, std::ifstream::in);
+    
+    char c = ifs.get();
+    while (ifs.good())
+    {
+        std::cout << c;
+        c = ifs.get();
+    }
+	cl.load(p);
 }
 
-int main()
+int main(int argc, char** argv)
 {
 
-	std::unique_ptr<int> value;
-    std::cout << "Hello World!\n";
+	loadbitop();
+ 
 	cpu.doooo(m);
 }
 
