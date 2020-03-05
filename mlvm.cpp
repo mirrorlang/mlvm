@@ -8,7 +8,7 @@
 #include "codeloader.h"
 
 memoryspace* m = new  memoryspace();
-runner cpu = runner();
+runnerthread cpu = runnerthread();
 void loadbitop() {
 	codeloader cl = codeloader();
     std::string p = "C:\\github.com\\mirrorlang\\mirrorlang\\example\\helloworld.html";
@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
 	loadbitop();
  
-	cpu.doooo(m);
+	//cpu.doooo(m);
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
